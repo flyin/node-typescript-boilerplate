@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const services_1 = require("./services");
+const logger_1 = require("./utils/logger");
+const emails_1 = require("./jobs/emails");
+services_1.mongoose.connection.once('open', () => {
+    logger_1.logger.info(`Connected to: ${services_1.settings.mongoURL}`);
+    emails_1.job(services_1.queue);
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29ya2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL3dvcmtlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHlDQUFvRDtBQUNwRCwyQ0FBcUM7QUFDckMsMENBQTZDO0FBRTdDLG1CQUFRLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxNQUFNLEVBQUU7SUFDL0IsZUFBTSxDQUFDLElBQUksQ0FBQyxpQkFBaUIsbUJBQVEsQ0FBQyxRQUFRLEVBQUUsQ0FBQyxDQUFBO0lBQ2pELFlBQVEsQ0FBQyxnQkFBSyxDQUFDLENBQUE7QUFDakIsQ0FBQyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge21vbmdvb3NlLCBzZXR0aW5ncywgcXVldWV9IGZyb20gJy4vc2VydmljZXMnXG5pbXBvcnQge2xvZ2dlcn0gZnJvbSAnLi91dGlscy9sb2dnZXInXG5pbXBvcnQge2pvYiBhcyBlbWFpbEpvYn0gZnJvbSAnLi9qb2JzL2VtYWlscydcblxubW9uZ29vc2UuY29ubmVjdGlvbi5vbmNlKCdvcGVuJywgKCkgPT4ge1xuICBsb2dnZXIuaW5mbyhgQ29ubmVjdGVkIHRvOiAke3NldHRpbmdzLm1vbmdvVVJMfWApXG4gIGVtYWlsSm9iKHF1ZXVlKVxufSlcbiJdfQ==

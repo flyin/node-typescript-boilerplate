@@ -1,13 +1,9 @@
 {
   "extends": "tslint-config-standard",
   "rules": {
-    "semicolon": [
-      true,
-      "always"
-    ],
     "max-line-length": [
       true,
-      120
+      140
     ]
   }
 }
