@@ -17,6 +17,8 @@
     "baseUrl": ".",
     "outDir": "dist",
     "rootDir": "src",
+    "skipLibCheck": true,
+    "lib": ["es2015"],
     "paths": {
       "*": ["src/*"]
     }
@@ -25,8 +27,7 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
+    "node_modules"
   ],
   "types": [
     "node",

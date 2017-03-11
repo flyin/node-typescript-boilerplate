@@ -1,5 +1,5 @@
 import * as kue from 'kue'
-import { settings } from './settings'
+import { settings } from '../settings'
 
 const queue: kue.Queue = kue.createQueue({
   redis: {

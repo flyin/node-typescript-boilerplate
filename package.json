@@ -10,31 +10,64 @@
     "start:dev": "concurrently \"npm run tsc:watch\" \"APP_ENV=API npm run start:dev-server\" \"APP_ENV=WORKER npm run start:dev-worker\"",
     "start:dev-server": "just-wait -p dist/server.js && nodemon --watch dist dist/server.js",
     "start:dev-worker": "just-wait -p dist/worker.js && nodemon --watch dist dist/worker.js",
-    "tsc:watch": "tsc -w"
+    "tsc:watch": "tsc -w",
+    "test": "jest --env=node --coverage --forceExit",
+    "test:watch": "jest --watch --env=node"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
-    "koa": "^2.0.1",
+    "koa": "^2.1.0",
     "koa-compose": "^3.2.1",
     "koa-router": "^7.1.0",
     "kue": "^0.11.5",
     "moment": "^2.17.1",
-    "mongoose": "^4.8.5",
+    "mongoose": "^4.8.6",
     "winston": "^2.3.1"
   },
   "devDependencies": {
     "@types/dotenv": "^2.0.20",
+    "@types/jest": "^19.2.1",
     "@types/koa": "^2.0.38",
     "@types/kue": "^0.9.31",
     "@types/moment": "^2.13.0",
-    "@types/mongoose": "^4.7.7",
-    "@types/node": "^7.0.5",
+    "@types/mongoose": "^4.7.8",
+    "@types/node": "^7.0.8",
     "@types/winston": "^2.2.0",
     "concurrently": "^3.4.0",
+    "jest": "^19.0.2",
     "just-wait": "^1.0.11",
     "nodemon": "^1.11.0",
+    "ts-jest": "^19.0.0",
     "tslint": "^4.5.1",
     "tslint-config-standard": "^4.0.0",
     "typescript": "^2.2.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/__tests__/",
+      "\\.(test|spec)\\.js$"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/(dist|tmp|cache)/"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/(jest|containers|coverage|dist|tmp|cache|node_modules)/"
+    ],
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
   }
 }

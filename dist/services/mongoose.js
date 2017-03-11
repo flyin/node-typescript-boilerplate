@@ -1,8 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = require("mongoose");
-exports.mongoose = mongoose;
-const settings_1 = require("./settings");
-mongoose.Promise = Promise;
-mongoose.connect(settings_1.settings.mongoURL);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW9uZ29vc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvc2VydmljZXMvbW9uZ29vc2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxxQ0FBcUM7QUFLNUIsNEJBQVE7QUFKakIseUNBQW1DO0FBRW5DLFFBQVEsQ0FBQyxPQUFPLEdBQUcsT0FBTyxDQUFBO0FBQzFCLFFBQVEsQ0FBQyxPQUFPLENBQUMsbUJBQVEsQ0FBQyxRQUFRLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBtb25nb29zZSA9IHJlcXVpcmUoJ21vbmdvb3NlJylcbmltcG9ydCB7c2V0dGluZ3N9IGZyb20gJy4vc2V0dGluZ3MnXG5cbm1vbmdvb3NlLlByb21pc2UgPSBQcm9taXNlXG5tb25nb29zZS5jb25uZWN0KHNldHRpbmdzLm1vbmdvVVJMKVxuZXhwb3J0IHsgbW9uZ29vc2UgfVxuIl19

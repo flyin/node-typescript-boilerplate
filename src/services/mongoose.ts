@@ -1,6 +1,6 @@
 import mongoose = require('mongoose')
-import {settings} from './settings'
+import { settings } from '../settings'
 
-mongoose.Promise = Promise
-mongoose.connect(settings.mongoURL)
+mongoose.Promise = global.Promise
 export { mongoose }
+mongoose.connect(settings.mongoURL)

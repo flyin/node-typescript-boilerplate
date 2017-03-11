@@ -1,8 +1,9 @@
 import * as http from 'http'
-import {koa, mongoose, settings} from './services'
+import {koa, mongoose} from './services'
 import {logger} from './utils/logger'
+import {settings} from './settings'
 
-const server = http.createServer(koa.callback())
+const server: http.Server = http.createServer(koa.callback())
 
 mongoose.connection.once('open', () => {
   logger.info(`Connected to: ${settings.mongoURL}`)

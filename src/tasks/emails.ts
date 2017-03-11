@@ -3,7 +3,7 @@ import { logger } from '../utils/logger'
 
 const concurrency: number = 10
 
-const job = (queue: kue.Queue) => queue.process('process-email', concurrency, (job: kue.Job, done: Function) => {
+const task = (queue: kue.Queue) => queue.process('process-email', concurrency, (job: kue.Job, done: Function) => {
   logger.info('job received', job.data)
 
   setTimeout(() => {
@@ -12,4 +12,4 @@ const job = (queue: kue.Queue) => queue.process('process-email', concurrency, (j
   }, 1000)
 })
 
-export { job }
+export { task }

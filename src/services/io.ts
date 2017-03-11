@@ -1,3 +1,4 @@
 const io = {}
-const emmiter = {}
-export {io, emmiter}
+const emitter = {}
+
+export {io, emitter}

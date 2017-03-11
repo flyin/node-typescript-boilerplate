@@ -1,8 +1,9 @@
-import {mongoose, settings, queue} from './services'
+import {mongoose, queue} from './services'
 import {logger} from './utils/logger'
-import {job as emailJob} from './jobs/emails'
+import {task as emailTask} from './tasks/emails'
+import {settings} from './settings'
 
 mongoose.connection.once('open', () => {
   logger.info(`Connected to: ${settings.mongoURL}`)
-  emailJob(queue)
+  emailTask(queue)
 })
